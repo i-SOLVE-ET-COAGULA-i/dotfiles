@@ -91,7 +91,7 @@ alias xres='vim ~/.Xresources'
 alias vol='amixer -q sset \"Master\"'
 alias light='xbacklight -set'
 alias suspend='systemctl suspend'
-
+alias bhist='cat .bash_history | grep'
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
