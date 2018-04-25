@@ -63,15 +63,6 @@ else
 fi
 unset color_prompt force_color_prompt
 
-# If this is an xterm set the title to user@host:dir
-case "$TERM" in
-xterm*|rxvt*)
-    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
-    ;;
-*)
-    ;;
-esac
-
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
@@ -79,28 +70,27 @@ if [ -x /usr/bin/dircolors ]; then
     #alias dir='dir --color=auto'
     #alias vdir='vdir --color=auto'
 
-    #alias grep='grep --color=auto'
-    #alias fgrep='fgrep --color=auto'
-    #alias egrep='egrep --color=auto'
+    alias grep='grep --color=auto'
+    alias fgrep='fgrep --color=auto'
+    alias egrep='egrep --color=auto'
 fi
 
 # colored GCC warnings and errors
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
-# some more ls aliases
+# Alias definitions.
 alias ll='ls -lh'
 alias la='ls -lah'
 alias sf='screenfetch'
 alias cll='clear; ls -lh'
 alias cla='clear; ls -lah'
 alias firefox='firefox &>/dev/null &'
-alias cfig='vim ~/.i3/config'
+alias i3cfig='vim ~/.i3/config'
+alias bshrc='vim ~/.bashrc'
+alias xres='vim ~/.Xresources'
 alias vol='amixer -q sset \"Master\"'
 alias light='xbacklight -set'
-# Alias definitions.
-# You may want to put all your additions into a separate file like
-# ~/.bash_aliases, instead of adding them here directly.
-# See /usr/share/doc/bash-doc/examples in the bash-doc package.
+alias suspend='systemctl suspend'
 
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
@@ -119,3 +109,4 @@ fi
 
 # Custom Global Variables
 DOTNET="$HOME/dotnet/Projects/"
+
